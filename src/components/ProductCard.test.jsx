@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import ProductCard from './ProductCard';
 
@@ -12,9 +12,9 @@ const mockProduct = {
 
 test('ProductCard başlık, fiyat ve görseli doğru gösterir', () => {
   render(
-    <BrowserRouter>
+    <MemoryRouter>
       <ProductCard product={mockProduct} />
-    </BrowserRouter>
+    </MemoryRouter>
   );
   expect(screen.getByText(/Test Ürünü/)).toBeInTheDocument();
   expect(screen.getByText(/\$9.99/)).toBeInTheDocument();
